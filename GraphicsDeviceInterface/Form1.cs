@@ -15,6 +15,7 @@ namespace GraphicsDeviceInterface
     {
         List<Shape> shapes = new List<Shape>();
         Shape currentShape = null;
+        ShapeType selectedShape;
         ShapeType selectedTool;
         public Form1()
         {
@@ -37,9 +38,10 @@ namespace GraphicsDeviceInterface
 
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
+
             if (currentShape == null)
             {
-                currentShape = getShape(e.X, e.Y, selectedTool);
+                currentShape = getShape(e.X, e.Y, selectedShape);
             }
             else
             {
@@ -56,6 +58,7 @@ namespace GraphicsDeviceInterface
                 shape.Draw(g);
             if (currentShape != null)
                 currentShape.Draw(g, true);
+            
         }
 
         private void PaintToolsStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -68,19 +71,19 @@ namespace GraphicsDeviceInterface
             switch (e.ClickedItem.Text)
             {
                 case "Circle":
-                    this.selectedTool = ShapeType.Ellipse;
+                    this.selectedShape = ShapeType.Ellipse;
                     return;
                 case "Rectangle":
-                    this.selectedTool = ShapeType.Rectangle;
+                    this.selectedShape = ShapeType.Rectangle;
                     return;
                 case "Line":
-                    this.selectedTool = ShapeType.Line;
+                    this.selectedShape = ShapeType.Line;
                     return;
                 case "Resize":
-                    this.selectedTool = ShapeType.Line;
+                    this.selectedShape = ShapeType.Line;
                     return;
                 default:
-                    this.selectedTool = ShapeType.Line;
+                    this.selectedShape = ShapeType.Line;
                     return;
             }
         }
