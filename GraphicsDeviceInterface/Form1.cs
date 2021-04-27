@@ -59,6 +59,13 @@ namespace GraphicsDeviceInterface
             else if (this.selectedTool == ToolType.ColorPicker)
             {
                 // TYPE COLOR PICKER LOGIC HERE
+                Shape s = getSelectedItem(e.X, e.Y);
+                if (s != null)
+                {
+                    this.colorDialog1.ShowDialog();
+                    s.Color = this.colorDialog1.Color;
+                    this.Invalidate();
+                }
             }
             else if (currentShape == null)
             {
