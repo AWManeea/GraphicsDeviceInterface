@@ -86,9 +86,19 @@ namespace GraphicsDeviceInterface
         }
         private Shape getShape(int x1, int y1, ShapeType type)
         {
-            if (type == ShapeType.Ellipse) return new Line(x1, y1);
+            if (type == ShapeType.Ellipse) return new Circle(x1, y1);
             else if (type == ShapeType.Rectangle) return new Line(x1, y1);
             else return new Line(x1, y1);
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }
