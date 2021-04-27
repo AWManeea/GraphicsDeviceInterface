@@ -17,10 +17,30 @@ namespace GraphicsDeviceInterface
         }
         public override void Draw(Graphics g, bool preview = false)
         {
-           if (preview)
-                g.DrawRectangle(new Pen(Color.DarkGray, 3), x1, y1, Width, Height);
-           else
-                g.DrawRectangle(this.pen, x1, y1, Width, Height);
+
+            int width = Width;
+            int x = x1;
+
+            if (width < 0)
+            {
+                width = Math.Abs(width);
+                x = x2;
+            }
+
+            int height = Height;
+            int y = y1;
+
+            if (height < 0)
+            {
+                height = Math.Abs(height);
+                y = y2;
+            }
+
+
+            if (preview)
+                g.DrawRectangle(new Pen(Color.DarkGray, 3), x, y, width, height);
+            else
+                g.DrawRectangle(this.pen, x, y, width, height);
 
         }
     }
