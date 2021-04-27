@@ -43,6 +43,10 @@ namespace GraphicsDeviceInterface
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.PaintToolsStrip = new System.Windows.Forms.ToolStrip();
             this.CircleButton = new System.Windows.Forms.ToolStripButton();
+            this.LineButton = new System.Windows.Forms.ToolStripButton();
+            this.RectangleButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.button1 = new System.Windows.Forms.Button();
             this.IOToolStrip.SuspendLayout();
             this.PaintToolsStrip.SuspendLayout();
             this.SuspendLayout();
@@ -153,7 +157,10 @@ namespace GraphicsDeviceInterface
             // 
             this.PaintToolsStrip.ImageScalingSize = new System.Drawing.Size(92, 92);
             this.PaintToolsStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.CircleButton});
+            this.CircleButton,
+            this.LineButton,
+            this.RectangleButton,
+            this.toolStripSeparator2});
             this.PaintToolsStrip.Location = new System.Drawing.Point(0, 46);
             this.PaintToolsStrip.Margin = new System.Windows.Forms.Padding(4);
             this.PaintToolsStrip.Name = "PaintToolsStrip";
@@ -164,6 +171,7 @@ namespace GraphicsDeviceInterface
             // 
             // CircleButton
             // 
+            this.CircleButton.CheckOnClick = true;
             this.CircleButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.CircleButton.Image = ((System.Drawing.Image)(resources.GetObject("CircleButton.Image")));
             this.CircleButton.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -172,12 +180,50 @@ namespace GraphicsDeviceInterface
             this.CircleButton.Text = "Circle";
             this.CircleButton.ToolTipText = "Circle";
             // 
+            // LineButton
+            // 
+            this.LineButton.CheckOnClick = true;
+            this.LineButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.LineButton.Image = ((System.Drawing.Image)(resources.GetObject("LineButton.Image")));
+            this.LineButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.LineButton.Name = "LineButton";
+            this.LineButton.Size = new System.Drawing.Size(96, 96);
+            this.LineButton.Text = "LineButton";
+            this.LineButton.ToolTipText = "Line";
+            // 
+            // RectangleButton
+            // 
+            this.RectangleButton.CheckOnClick = true;
+            this.RectangleButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.RectangleButton.Image = ((System.Drawing.Image)(resources.GetObject("RectangleButton.Image")));
+            this.RectangleButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.RectangleButton.Name = "RectangleButton";
+            this.RectangleButton.Size = new System.Drawing.Size(96, 96);
+            this.RectangleButton.Text = "RectangleButton";
+            this.RectangleButton.ToolTipText = "Rectangle";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 102);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1043, 753);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(169, 52);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(2485, 1537);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.PaintToolsStrip);
             this.Controls.Add(this.IOToolStrip);
             this.Name = "Form1";
@@ -210,6 +256,10 @@ namespace GraphicsDeviceInterface
         private System.Windows.Forms.ToolStripButton helpToolStripButton;
         private System.Windows.Forms.ToolStrip PaintToolsStrip;
         private System.Windows.Forms.ToolStripButton CircleButton;
+        private System.Windows.Forms.ToolStripButton LineButton;
+        private System.Windows.Forms.ToolStripButton RectangleButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.Button button1;
     }
 }
 
