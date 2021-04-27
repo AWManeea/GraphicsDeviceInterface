@@ -14,5 +14,6 @@ namespace GraphicsDeviceInterface
 		Ellipser,
 		Resizer,
 		Relocator,
+		ColorPicker,
     }
 }

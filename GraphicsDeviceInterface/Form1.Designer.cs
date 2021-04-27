@@ -47,6 +47,8 @@ namespace GraphicsDeviceInterface
             this.RectangleButton = new System.Windows.Forms.ToolStripButton();
             this.Seperator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ResizeButton = new System.Windows.Forms.ToolStripButton();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.ColorPickerButton = new System.Windows.Forms.ToolStripButton();
             this.IOToolStrip.SuspendLayout();
             this.PaintToolsStrip.SuspendLayout();
             this.SuspendLayout();
@@ -161,7 +163,8 @@ namespace GraphicsDeviceInterface
             this.CircleButton,
             this.RectangleButton,
             this.Seperator1,
-            this.ResizeButton});
+            this.ResizeButton,
+            this.ColorPickerButton});
             this.PaintToolsStrip.Location = new System.Drawing.Point(0, 46);
             this.PaintToolsStrip.Margin = new System.Windows.Forms.Padding(4);
             this.PaintToolsStrip.Name = "PaintToolsStrip";
@@ -223,6 +226,16 @@ namespace GraphicsDeviceInterface
             this.ResizeButton.Text = "Resize";
             this.ResizeButton.ToolTipText = "Resize";
             // 
+            // ColorPickerButton
+            // 
+            this.ColorPickerButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ColorPickerButton.Image = ((System.Drawing.Image)(resources.GetObject("ColorPickerButton.Image")));
+            this.ColorPickerButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ColorPickerButton.Name = "ColorPickerButton";
+            this.ColorPickerButton.Size = new System.Drawing.Size(96, 96);
+            this.ColorPickerButton.Text = "ColorPicker";
+            this.ColorPickerButton.ToolTipText = "Color Picker";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 37F);
@@ -266,6 +279,8 @@ namespace GraphicsDeviceInterface
         private System.Windows.Forms.ToolStripButton RectangleButton;
         private System.Windows.Forms.ToolStripSeparator Seperator1;
         private System.Windows.Forms.ToolStripButton ResizeButton;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.ToolStripButton ColorPickerButton;
     }
 }
 

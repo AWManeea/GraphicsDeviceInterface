@@ -56,6 +56,10 @@ namespace GraphicsDeviceInterface
                     this.Invalidate();
                 }
             }
+            else if (this.selectedTool == ToolType.ColorPicker)
+            {
+                // TYPE COLOR PICKER LOGIC HERE
+            }
             else if (currentShape == null)
             {
                 currentShape = getShape(e.X, e.Y, selectedShape);
@@ -105,6 +109,9 @@ namespace GraphicsDeviceInterface
                 case "Relocate":
                     this.selectedTool = ToolType.Relocator;
                     return;
+                case "ColorPicker":
+                    this.selectedTool = ToolType.ColorPicker;
+                    return;
                 default:
                     this.selectedShape = ShapeType.Line;
                     return;
@@ -132,5 +139,6 @@ namespace GraphicsDeviceInterface
         {
             return (x > s.x1 && x < s.x2 && y > s.y1 && y < s.y2);
         }
+
     }
 }
