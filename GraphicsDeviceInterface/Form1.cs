@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -59,23 +60,28 @@ namespace GraphicsDeviceInterface
 
         private void PaintToolsStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            LineButton.Checked = false;
-            CircleButton.Checked = false;
-            RectangleButton.Checked = false;
+            foreach (var item in PaintToolsStrip.Items)
+                if(item.GetType().Equals(typeof(ToolStripButton)))
+                    ((ToolStripButton)item).Checked = false;
+            
+
             switch (e.ClickedItem.Text)
             {
                 case "Circle":
-                    CircleButton.Checked = true;
                     this.selectedTool = ShapeType.Ellipse;
-                    break;
+                    return;
                 case "Rectangle":
-                    RectangleButton.Checked = true;
                     this.selectedTool = ShapeType.Rectangle;
-                    break;
-                default:
-                    LineButton.Checked = true;
+                    return;
+                case "Line":
                     this.selectedTool = ShapeType.Line;
-                    break;
+                    return;
+                case "Resize":
+                    this.selectedTool = ShapeType.Line;
+                    return;
+                default:
+                    this.selectedTool = ShapeType.Line;
+                    return;
             }
         }
         private Shape getShape(int x1, int y1, ShapeType type)

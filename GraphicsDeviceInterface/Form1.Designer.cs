@@ -42,10 +42,11 @@ namespace GraphicsDeviceInterface
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.PaintToolsStrip = new System.Windows.Forms.ToolStrip();
-            this.CircleButton = new System.Windows.Forms.ToolStripButton();
             this.LineButton = new System.Windows.Forms.ToolStripButton();
+            this.CircleButton = new System.Windows.Forms.ToolStripButton();
             this.RectangleButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.Seperator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.ResizeButton = new System.Windows.Forms.ToolStripButton();
             this.IOToolStrip.SuspendLayout();
             this.PaintToolsStrip.SuspendLayout();
             this.SuspendLayout();
@@ -159,7 +160,8 @@ namespace GraphicsDeviceInterface
             this.LineButton,
             this.CircleButton,
             this.RectangleButton,
-            this.toolStripSeparator2});
+            this.Seperator1,
+            this.ResizeButton});
             this.PaintToolsStrip.Location = new System.Drawing.Point(0, 46);
             this.PaintToolsStrip.Margin = new System.Windows.Forms.Padding(4);
             this.PaintToolsStrip.Name = "PaintToolsStrip";
@@ -168,18 +170,6 @@ namespace GraphicsDeviceInterface
             this.PaintToolsStrip.TabIndex = 1;
             this.PaintToolsStrip.Text = "Paint Tools";
             this.PaintToolsStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.PaintToolsStrip_ItemClicked);
-            // 
-            // CircleButton
-            // 
-            this.CircleButton.AccessibleName = "CircleButton";
-            this.CircleButton.CheckOnClick = true;
-            this.CircleButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.CircleButton.Image = ((System.Drawing.Image)(resources.GetObject("CircleButton.Image")));
-            this.CircleButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.CircleButton.Name = "CircleButton";
-            this.CircleButton.Size = new System.Drawing.Size(96, 96);
-            this.CircleButton.Text = "Circle";
-            this.CircleButton.ToolTipText = "Circle";
             // 
             // LineButton
             // 
@@ -194,6 +184,18 @@ namespace GraphicsDeviceInterface
             this.LineButton.Text = "Line";
             this.LineButton.ToolTipText = "Line";
             // 
+            // CircleButton
+            // 
+            this.CircleButton.AccessibleName = "CircleButton";
+            this.CircleButton.CheckOnClick = true;
+            this.CircleButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.CircleButton.Image = ((System.Drawing.Image)(resources.GetObject("CircleButton.Image")));
+            this.CircleButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.CircleButton.Name = "CircleButton";
+            this.CircleButton.Size = new System.Drawing.Size(96, 96);
+            this.CircleButton.Text = "Circle";
+            this.CircleButton.ToolTipText = "Circle";
+            // 
             // RectangleButton
             // 
             this.RectangleButton.CheckOnClick = true;
@@ -205,10 +207,21 @@ namespace GraphicsDeviceInterface
             this.RectangleButton.Text = "Rectangle";
             this.RectangleButton.ToolTipText = "Rectangle";
             // 
-            // toolStripSeparator2
+            // Seperator1
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 102);
+            this.Seperator1.Margin = new System.Windows.Forms.Padding(16, 0, 16, 0);
+            this.Seperator1.Name = "Seperator1";
+            this.Seperator1.Size = new System.Drawing.Size(6, 102);
+            // 
+            // ResizeButton
+            // 
+            this.ResizeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ResizeButton.Image = ((System.Drawing.Image)(resources.GetObject("ResizeButton.Image")));
+            this.ResizeButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ResizeButton.Name = "ResizeButton";
+            this.ResizeButton.Size = new System.Drawing.Size(96, 96);
+            this.ResizeButton.Text = "Resize";
+            this.ResizeButton.ToolTipText = "Resize";
             // 
             // Form1
             // 
@@ -250,7 +263,8 @@ namespace GraphicsDeviceInterface
         private System.Windows.Forms.ToolStripButton CircleButton;
         private System.Windows.Forms.ToolStripButton LineButton;
         private System.Windows.Forms.ToolStripButton RectangleButton;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator Seperator1;
+        private System.Windows.Forms.ToolStripButton ResizeButton;
     }
 }
 
