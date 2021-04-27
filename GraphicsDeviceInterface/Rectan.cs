@@ -40,7 +40,19 @@ namespace GraphicsDeviceInterface
             if (preview)
                 g.DrawRectangle(new Pen(Color.DarkGray, 3), x, y, width, height);
             else
+            {
                 g.DrawRectangle(this.pen, x, y, width, height);
+                if (y == y2)
+                {
+                    this.y2 = this.y1;
+                    this.y1 = y;
+                }
+                if (x == x2)
+                {
+                    this.x2 = this.x1;
+                    this.x1 = x;
+                }
+            }
 
         }
     }
