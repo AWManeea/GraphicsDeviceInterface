@@ -30,6 +30,7 @@ namespace GraphicsDeviceInterface
             {
                 currentShape.x2 = e.X;
                 currentShape.y2 = e.Y;
+                this.Invalidate();
             }
         }
 
@@ -38,16 +39,13 @@ namespace GraphicsDeviceInterface
             if (currentShape == null)
             {
                 currentShape = getShape(e.X, e.Y, selectedTool);
-            } else
+            }
+            else
             {
                 shapes.Add(currentShape);
                 currentShape = null;
+                this.Invalidate();
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -56,8 +54,7 @@ namespace GraphicsDeviceInterface
             foreach (var shape in shapes)
                 shape.Draw(g);
             if (currentShape != null)
-                currentShape.Draw(g, false);
-
+                currentShape.Draw(g, true);
         }
 
         private void PaintToolsStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -86,7 +83,6 @@ namespace GraphicsDeviceInterface
             if (type == ShapeType.Ellipse) return new Line(x1, y1);
             else if (type == ShapeType.Rectangle) return new Line(x1, y1);
             else return new Line(x1, y1);
-
         }
     }
 }

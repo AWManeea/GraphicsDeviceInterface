@@ -46,19 +46,17 @@ namespace GraphicsDeviceInterface
             }
         }
         public abstract void Draw(Graphics g, bool preview = false);
+        
         public void Relocate()
         {
             //TODO: implement me
             throw new Exception("Implement me");
         }
+       
         public void Resize()
         {
             //TODO: implement me
             throw new Exception("Implement me");
-        }
-        public Shape()
-        {
-
         }
     }
 
