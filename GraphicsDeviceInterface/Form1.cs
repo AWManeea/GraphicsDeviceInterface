@@ -16,7 +16,7 @@ namespace GraphicsDeviceInterface
         List<Shape> shapes = new List<Shape>();
         Shape currentShape = null;
         ShapeType selectedShape;
-        ShapeType selectedTool;
+        ToolType selectedTool;
         public Form1()
         {
             InitializeComponent();
@@ -38,8 +38,25 @@ namespace GraphicsDeviceInterface
 
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
+            if(this.selectedTool == ToolType.Resizer)
+            {
+                Shape s = getSelectedItem(e.X, e.Y);
+                if (s != null)
+                {
 
-            if (currentShape == null)
+                    currentShape = getShape(s.x1, s.y1, s.type);
+                    shapes.Remove(s);
+                    this.selectedTool = ToolType.Liner;
+                    this.selectedShape = ShapeType.Line;
+                    LineButton.Checked = true;
+                    foreach (var item in PaintToolsStrip.Items)
+                        if (item.GetType().Equals(typeof(ToolStripButton)))
+                            ((ToolStripButton)item).Checked = false;
+
+                    this.Invalidate();
+                }
+            }
+            else if (currentShape == null)
             {
                 currentShape = getShape(e.X, e.Y, selectedShape);
             }
@@ -72,36 +89,48 @@ namespace GraphicsDeviceInterface
             {
                 case "Circle":
                     this.selectedShape = ShapeType.Ellipse;
+                    this.selectedTool = ToolType.Ellipser;
                     return;
                 case "Rectangle":
                     this.selectedShape = ShapeType.Rectangle;
+                    this.selectedTool = ToolType.Rectangler;
                     return;
                 case "Line":
                     this.selectedShape = ShapeType.Line;
+                    this.selectedTool = ToolType.Liner;
                     return;
                 case "Resize":
-                    this.selectedShape = ShapeType.Line;
+                    this.selectedTool = ToolType.Resizer;
+                    return;
+                case "Relocate":
+                    this.selectedTool = ToolType.Relocator;
                     return;
                 default:
                     this.selectedShape = ShapeType.Line;
                     return;
             }
         }
+        
         private Shape getShape(int x1, int y1, ShapeType type)
         {
             if (type == ShapeType.Ellipse) return new Circle(x1, y1);
-            else if (type == ShapeType.Rectangle) return new Line(x1, y1);
+            else if (type == ShapeType.Rectangle) return new Rectan(x1, y1);
             else return new Line(x1, y1);
         }
 
-        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        private Shape getSelectedItem(int x, int y)
         {
-
+            foreach (var item in shapes)
+            {
+                if (PointInShape(x, y, item))
+                    return item;
+            }
+            return null;
         }
 
-        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        private bool PointInShape(int x, int y, Shape s) 
         {
-
+            return (x > s.x1 && x < s.x2 && y > s.y1 && y < s.y2);
         }
     }
 }
